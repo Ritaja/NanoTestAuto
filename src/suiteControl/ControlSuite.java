@@ -3,6 +3,7 @@
  */
 package suiteControl;
 
+import testSuite.GenericClassSuite;
 import testSuite.SuiteImpl;
 
 /**
@@ -12,6 +13,6 @@ import testSuite.SuiteImpl;
 public interface ControlSuite {
 	
 	public void setSuiteType(SuiteImpl suite, String classType);
-	public void createSuiteType() throws InstantiationException, IllegalAccessException, ClassNotFoundException;
+	public GenericClassSuite createSuiteType() throws InstantiationException, IllegalAccessException, ClassNotFoundException;
 
 }

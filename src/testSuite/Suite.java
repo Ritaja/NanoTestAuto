@@ -9,7 +9,7 @@ package testSuite;
  */
 public interface Suite {
 	
-	public void createType() throws InstantiationException, IllegalAccessException, ClassNotFoundException;
+	public GenericClassSuite createType() throws InstantiationException, IllegalAccessException, ClassNotFoundException;
 	void setType(String classType);
 
 }
