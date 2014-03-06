@@ -1,8 +1,8 @@
 /**
- * Would contain Classes for reading from Excel.
+ * Would contain Classes for reading from Excel. This would be inherited by the testControl class.
  */
 /**
- * @author nanophotometer
+ * @author nanophotometer, Ritaja Sengupta
  *
  */
 package excelReader;
