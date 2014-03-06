@@ -11,17 +11,42 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class LoginAuto  {
-    public static void main(String[] args) throws InterruptedException {
+	//set default temp
+	private String website = "http://profectus/NanoSenchaTouch2.1.1%20(Sprint%2027%2004-03-14)/index-debug.html?demo=On,client=Desktop";
+	// set default value
+	private String driver = "webdriver.chrome.driver"; 
+	//set default value
+	private String driverPath = "C:/Program Files/Java/eclipse-standard-kepler-SR2-win32-x86_64/chromedriver.exe"; 
+	
+	
+	public LoginAuto()
+	{
+		//default constructor for test please remove later
+	}
+	public LoginAuto(String website)
+	{
+		//set the nano test website
+		this.website = website;
+	}
+	//overloaded constructor to set webdrivers
+	public LoginAuto(String website,String driver, String driverPath)
+	{
+		//set the nano test website
+		this.website = website;
+		this.driver = driver;
+		this.driverPath = driverPath;
+	}
+    public void login() throws InterruptedException {
         // Create a new instance of the chrome unit driver
         // Notice that the remainder of the code relies on the interface, 
         // not the implementation.
-    	System.setProperty("webdriver.chrome.driver", "C:/Program Files/Java/eclipse-standard-kepler-SR2-win32-x86_64/chromedriver.exe");
-    	System.out.println(System.getProperty("webdriver.chrome.driver"));
+    	System.setProperty(this.driver, this.driverPath);
+    	System.out.println(System.getProperty(this.driver));
        // WebDriver driver = new HtmlUnitDriver();
         WebDriver driver = new ChromeDriver();
 
         // And now use this to visit desired site
-        driver.get("http://profectus/NanoSenchaTouch2.1.1%20(Sprint%2023,%20External)/index-debug.html?demo=On,client=Desktop");
+        driver.get(this.website);
 
         //initialize web element
         WebElement element;
@@ -42,4 +67,14 @@ public class LoginAuto  {
 
         driver.quit();
     }
+
+
+public static void main(String[] args) throws InterruptedException {
+	
+	//dummy main please remove later
+	LoginAuto la = new LoginAuto();
+	
+	la.login();
+	
+  }
 }
