@@ -1,5 +1,5 @@
 /**
- * Contains different types of the test classes: P-Class etc
+ * Contains class for Suite selection. Also the Suite type classes.
  * 
  *
  */

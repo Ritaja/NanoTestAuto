@@ -1,4 +1,5 @@
-/**
+/**ControlSuite Interface: template for the Policy Selector Class
+ * Implemented by ControlSuiteImpl class
  * 
  */
 package suiteControl;

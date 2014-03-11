@@ -1,4 +1,5 @@
-/**
+/**Reader Interface: template for the file reader class
+ * Implemented by ReaderImpl class
  * 
  */
 package excelReader;

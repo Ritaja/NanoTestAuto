@@ -8,7 +8,11 @@ public class ControlSuiteImpl implements ControlSuite {
 	private SuiteImpl suite;
 	private String classType;
 	private GenericClassSuite testSuite;
-	
+	/**
+	 * Default Constructor
+	 * @param void
+	 * @return void
+	 */
 	public ControlSuiteImpl()
 	{
 		this.suite = null;
@@ -16,7 +20,12 @@ public class ControlSuiteImpl implements ControlSuite {
 		this.testSuite = null;
 	}
 
-	@Override
+	/**
+	 * Set the SuiteImpl object (Suite Selector) and the Suite type (as String)
+	 * @Override
+	 * @param object of the SuiteImpl class, String representing the Suite type
+	 * @return void
+	 */
 	public void setSuiteType(SuiteImpl suite, String classType) {
 		// TODO create the appropriate test suite as called from the test control class
 		
@@ -27,7 +36,13 @@ public class ControlSuiteImpl implements ControlSuite {
 
 	}
 
-	@Override
+	/**
+	 * Creates the Suite Type (eg: PclassSuite) using the SuiteImpl (Suite selector)
+	 * @Override
+	 * @exception InstantiationException,IllegalAccessException, ClassNotFoundException
+	 * @param void
+	 * @return object of type GenericSuite. (Has access to Navigation)
+	 */
 	public GenericClassSuite createSuiteType() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		// TODO create suite using the testSuite
 		

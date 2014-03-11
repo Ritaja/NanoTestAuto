@@ -1,4 +1,5 @@
-/**
+/**Control Interface: template for the UI
+ * Implemented by ControlImpl class
  * 
  */
 package testControl;

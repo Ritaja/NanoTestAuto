@@ -4,7 +4,11 @@ public class SuiteImpl implements Suite {
 	
 	private String classType;
 	private GenericClassSuite testSuite;
-	
+	/**
+	 * Default Constructor
+	 * @param void
+	 * @return void
+	 */
 	public SuiteImpl()
 	{
 		//dummy constructor
@@ -12,7 +16,13 @@ public class SuiteImpl implements Suite {
 		this.testSuite = null;
 	}
 
-	@Override
+	/**
+	 * Creates the Suite Type (eg: PclassSuite) from the already set Suite Type.
+	 * @Override
+	 * @param void
+	 * @return object of GenericClassSuite. object has access to the Navigation.
+	 * @exception InstantiationException, IllegalAccessException, ClassNotFoundException
+	 */
 	public GenericClassSuite createType() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		// TODO create the classes of Type P or C class
 		this.testSuite = (GenericClassSuite) Class.forName(this.classType).newInstance();
@@ -23,7 +33,12 @@ public class SuiteImpl implements Suite {
 
 	}
 
-	@Override
+	/**
+	 * Sets the Suite Type to be created.
+	 * @Override
+	 * @param String of the Type of suite to be created
+	 * @return void
+	 */
 	public void setType(String classType) {
 		// TODO set Type using the suiteControl class
 		

@@ -11,24 +11,42 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class LoginAuto  {
-	//set default temp
-	private String website = "http://profectus/NanoSenchaTouch2.1.1%20(Sprint%2027%2004-03-14)/index-debug.html?demo=On,client=Desktop";
-	// set default value
-	private String driver = "webdriver.chrome.driver"; 
-	//set default value
-	private String driverPath = "C:/Program Files/Java/eclipse-standard-kepler-SR2-win32-x86_64/chromedriver.exe"; 
 	
+	private String website;
+	private String driver; 
+	private String driverPath;
 	
+	/**
+	 * Default constructor.
+	 * @param void
+	 * @return void
+	 */
 	public LoginAuto()
 	{
-		//default constructor for test please remove later
+		//set default temp
+		this.website = "http://profectus/NanoSenchaTouch2.1.1%20(Sprint%2027%2004-03-14)/index-debug.html?demo=On,client=Desktop";
+		// set default value to chrome driver
+		this.driver = "webdriver.chrome.driver";
+		//set the default path.WARNING: change the path accordingly
+		this.driverPath = "C:/Program Files/Java/eclipse-standard-kepler-SR2-win32-x86_64/chromedriver.exe"; 
+		
 	}
+	/**
+	 * Parameterized constructor.
+	 * @param website link as a String
+	 * @return void
+	 */
 	public LoginAuto(String website)
 	{
 		//set the nano test website
 		this.website = website;
+		
 	}
-	//overloaded constructor to set webdrivers
+	/**
+	 * Parameterized constructor.
+	 * @param website link as a String, driver as String, driverPath as a String
+	 * @return void
+	 */
 	public LoginAuto(String website,String driver, String driverPath)
 	{
 		//set the nano test website
@@ -36,6 +54,11 @@ public class LoginAuto  {
 		this.driver = driver;
 		this.driverPath = driverPath;
 	}
+	/**
+	 * Method to automate the login operation using Selenium web drivers.
+	 * @param void
+	 * @return void
+	 */
     public void login() throws InterruptedException {
         // Create a new instance of the chrome unit driver
         // Notice that the remainder of the code relies on the interface, 

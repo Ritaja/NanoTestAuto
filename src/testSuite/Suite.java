@@ -1,4 +1,5 @@
-/**
+/**Suite Interface: template for the Suite selector class
+ * Implemented by SuiteImpl class
  * 
  */
 package testSuite;
