@@ -20,6 +20,7 @@ public class LoginAuto  {
 	 * Default constructor.
 	 * @param void
 	 * @return void
+	 *
 	 */
 	public LoginAuto()
 	{
@@ -51,7 +52,9 @@ public class LoginAuto  {
 	{
 		//set the nano test website
 		this.website = website;
+		//set driver, for default chrome use default constructor
 		this.driver = driver;
+		//set driverpath
 		this.driverPath = driverPath;
 	}
 	/**

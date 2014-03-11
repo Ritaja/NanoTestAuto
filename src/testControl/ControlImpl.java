@@ -1,12 +1,15 @@
 package testControl;
 
+import java.io.IOException;
+
+import excelReader.ReaderImpl;
 import suiteControl.ControlSuiteImpl;
 import testSuite.GenericClassSuite;
 import testSuite.SuiteImpl;
 import testSuite.GenericClassSuite;
 import testNavigation.Navigation;
 
-public class ControlImpl implements Control {
+public class ControlImpl extends ReaderImpl implements Control{
 	
 	private SuiteImpl suite;
 	private ControlSuiteImpl controlSuite;
@@ -16,8 +19,9 @@ public class ControlImpl implements Control {
 	 * Default Constructor
 	 * @param void
 	 * @return void
+	 * @throws IOException
 	 */
-	public ControlImpl()
+	public ControlImpl() throws IOException
 	{
 		this.suite = null;
 		this.controlSuite = null;
@@ -87,16 +91,31 @@ public class ControlImpl implements Control {
 	 * @exception InstantiationException, IllegalAccessException, ClassNotFoundException, InterruptedException
 	 * @param void
 	 * @return void
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, InterruptedException {
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, InterruptedException, IOException {
 		// TODO test implementation
 		
+//		ReaderImpl excelReader = new ReaderImpl();
+//		int found = excelReader.readData();
+//		if (found == 0)
+//		{
+//			System.out.println("No relevant operation found!");
+//			System.exit(0);
+//		}			
 		//instantiate required classes
 		SuiteImpl suite = new SuiteImpl();
 		ControlSuiteImpl controlSuite = new ControlSuiteImpl();
 		//use the fully qualified name
 		String classType = "testSuite.PclassSuite";
 		ControlImpl control = new ControlImpl();
+		
+		int found = control.readData();
+		if (found == 0)
+			{
+				System.out.println("No relevant operation found!");
+				System.exit(0);
+			}
 		
 		//create the suite instance
 		control.setSuite(suite);
