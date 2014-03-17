@@ -25,7 +25,6 @@ public class ControlImpl{
 	private String driver = "webdriver.chrome.driver"; 
 	private String driverPath = "C:/Program Files/Java/eclipse-standard-kepler-SR2-win32-x86_64/chromedriver.exe";
 	
-	
 	public WebDriver webDriver;
 	/**
 	 * Default Constructor
@@ -40,12 +39,6 @@ public class ControlImpl{
 		this.genericTest = new GenericTest(this);
 		this.parameters = null;
 		this.navigationComponents = null;
-		//set default temp
-		this.website = "http://profectus/NanoSenchaTouch2.1.1%20(Sprint%2027%2004-03-14)/index-debug.html?demo=On,client=Desktop";
-		// set default value to chrome driver
-		this.driver = "webdriver.chrome.driver";
-		//set the default path.WARNING: change the path accordingly
-		this.driverPath = "C:/Program Files/Java/eclipse-standard-kepler-SR2-win32-x86_64/chromedriver.exe"; 
 	}
     
     public void getParameters()

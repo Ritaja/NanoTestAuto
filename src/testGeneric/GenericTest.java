@@ -16,7 +16,7 @@ public class GenericTest {
 	{
 		this.parameters = null;
 		this.navigationComponents = null;
-		this.webDriver = controlImpl.getDriver();
+		//this.webDriver = controlImpl.getDriver();
 		
 	}
 
