@@ -105,7 +105,7 @@ public class ControlImpl{
     /**
 	 * Initiates and returns the web driver that has to be used for navigation
 	 * @param void
-	 * @return void
+	 * @return initialised web driver for chrome
 	 */
     public WebDriver getDriver()
     {
@@ -124,16 +124,27 @@ public class ControlImpl{
 	 * Set the driver in the GenericTest class which would be used to navigate
 	 * @param void
 	 * @return void
-	 * @throws IOException
 	 */
     public void initializeDriver()
     {
     	this.genericTest.initializeDriver(this);
     }
     
+    /**
+   	 * Uses reader class to read excel for the test suite type
+   	 * @param void
+   	 * @return void
+   	 */
+    private void readTestSuite() {
+		String testSuite = this.reader.readTestSuite();
+		
+	}
+    
 	public static void main(String[] args) throws IOException {
 		
 		ControlImpl control = new ControlImpl();
+		control.readTestSuite();
+		
 		//set the driver
 		control.setDriverPath("C:/Program Files/Java/eclipse-standard-kepler-SR2-win32-x86_64/chromedriver.exe");
 		control.setDriver("webdriver.chrome.driver");

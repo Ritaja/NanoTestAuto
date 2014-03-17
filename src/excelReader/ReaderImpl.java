@@ -84,6 +84,7 @@ public class ReaderImpl implements Reader {
             while (cellIterator.hasNext()) 
             {
             	Cell cell = cellIterator.next();
+            	System.out.println(cell);
             	if(cell.toString().equalsIgnoreCase("login"))
             	{
             		System.out.println("Login found Executing AutoLogin");
@@ -120,5 +121,31 @@ public class ReaderImpl implements Reader {
 		this.file.close();
 	}
 	
+	/**
+   	 * Reads from the excel to understand the test Suits to be performed
+   	 * @param void
+   	 * @return void
+   	 */
+	public String readTestSuite() {
+		//Iterate through each rows one by one
+        Iterator<Row> rowIterator = sheet.iterator();
+        this.found = 0;
+        while (rowIterator.hasNext()) 
+        {
+            Row row = rowIterator.next();
+            //For each row, iterate through all the columns
+            Iterator<Cell> cellIterator = row.cellIterator();
+             
+            while (cellIterator.hasNext()) 
+            {
+            	Cell cell = cellIterator.next();
+            	String key = cell.getStringCellValue();
+            	System.out.println(key);
+	        }
+       }
+		return filename;
+	}
+	
 	//use setters ad getters to set the filename to read from
 }
+	

@@ -40,11 +40,15 @@ public class GenericTest {
 		
 		this.navigationComponents = navigationComponents;
 	}
-
+	/**
+	 * initialises the driver to be used
+	 * @param object of ControlImpl class
+	 * @return void
+	 */
 	public void initializeDriver(ControlImpl controlImpl) {
 		// initialize the drivers
 		this.webDriver = controlImpl.getDriver();
-		System.out.println("got driver"+this.webDriver);
+		
 	}
 
 }
